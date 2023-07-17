@@ -8,6 +8,18 @@ body {
     background-color: #fafafa;
     color: #333;
   }
+
+  body.dark-theme {
+    /* Dark mode styles here */
+    background-color: #202c37;
+    color: #fff;
+  }
+
+  body.dark-theme .country-card {
+    background-color: #2b3945;
+    color: #fff;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+  }
   
   h1, h2, h3, h4, h5, h6 {
     margin: 0;
