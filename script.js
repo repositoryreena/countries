@@ -1,5 +1,4 @@
 // Get DOM elements
-// Get DOM elements
 const themeSwitch = document.getElementById('theme-switch');
 const searchInput = document.getElementById('search-input');
 const regionSelect = document.getElementById('region-select');
@@ -13,14 +12,11 @@ function toggleTheme() {
 // Event listener for theme switch button
 themeSwitch.addEventListener('click', toggleTheme);
 
-// ... (rest of the code remains unchanged)
-
-
 // Fetch country data from data.json
 fetch('data.json')
   .then((response) => response.json())
   .then((data) => {
-    // Display all countries on the homepage
+    // Function to display countries
     function displayCountries(countries) {
       countryList.innerHTML = '';
       countries.forEach((country) => {
@@ -61,7 +57,7 @@ fetch('data.json')
       return countryCard;
     }
 
-    // Filter countries by search input
+    // Function to filter countries by search term
     function searchCountries(searchTerm) {
       const filteredCountries = data.filter((country) =>
         country.name.toLowerCase().includes(searchTerm.toLowerCase())
@@ -75,21 +71,22 @@ fetch('data.json')
       searchCountries(searchTerm);
     });
 
-    // Filter countries by region
+    // Function to filter countries by region
     function filterByRegion(region) {
-      if (region === 'all') {
-        displayCountries(data);
-      } else {
-        const filteredCountries = data.filter((country) => country.region === region);
-        displayCountries(filteredCountries);
+        const filteredCountries = data.filter((country) => country.region.toLowerCase() === region.toLowerCase() || region === 'all');
+        if (filteredCountries.length === 0) {
+          // If no countries match the selected region, display a message or handle it accordingly
+          countryList.innerHTML = '<p>No countries found for this region.</p>';
+        } else {
+          displayCountries(filteredCountries);
+        }
       }
-    }
 
     // Event listener for region select
     regionSelect.addEventListener('change', (event) => {
-      const selectedRegion = event.target.value;
-      filterByRegion(selectedRegion);
-    });
+        const selectedRegion = event.target.value;
+        filterByRegion(selectedRegion);
+      });
 
     // Initial display of all countries
     displayCountries(data);
