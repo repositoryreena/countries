@@ -1,0 +1,172 @@
+/* Global Styles */
+body {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #fafafa;
+    color: #333;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    font-weight: 800;
+  }
+  
+  img {
+    max-width: 100%;
+  }
+  
+  /* Header Styles */
+  header {
+    background-color: #2b3945;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  header h1 {
+    font-size: 1.8rem;
+  }
+  
+  header button {
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+  
+  /* Main Styles */
+  main {
+    padding: 2rem;
+  }
+  
+  /* Home Page Styles */
+  .home {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+  
+  .search input {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    outline: none;
+    font-size: 1rem;
+  }
+  
+  .filter select {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    outline: none;
+    font-size: 1rem;
+  }
+  
+  .country-list {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .country-card {
+    width: calc(25% - 1rem); /* Each card takes up 25% width of the container with 1rem gap between them */
+    flex-basis: calc(25% - 1rem); /* Equivalent to width to ensure equal distribution */
+    margin-bottom: 2rem;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .country-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .country-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+  }
+  
+  .country-card h3 {
+    padding: 1rem;
+    font-size: 1.2rem;
+  }
+  
+  .country-card p {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  /* Detailed Country Information Page Styles */
+  .country-details {
+    display: none;
+    padding: 2rem;
+  }
+  
+  #back-button {
+    background-color: #2b3945;
+    color: #fff;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  .country-info {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .country-info .flag {
+    flex: 1;
+  }
+  
+  .country-info .flag img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .country-info .details {
+    flex: 2;
+  }
+  
+  .country-info h2 {
+    font-size: 1.8rem;
+  }
+  
+  .country-info p {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+  }
+  
+  .border-countries button {
+    background-color: #2b3945;
+    color: #fff;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s ease;
+  }
+  
+  .border-countries button:hover {
+    background-color: #3f4c59;
+  }
+  
