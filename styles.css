@@ -10,7 +10,6 @@ body {
 }
 
 body.dark-theme {
-    /* Dark mode styles here */
     background-color: #202c37;
     color: #fff;
 }
@@ -82,7 +81,7 @@ main {
 }
 
 .country-card {
-    width: calc(25% - 1rem); /* Each card takes up 25% width of the container with 1rem gap between them */
+    width: calc(25% - 1rem); /* Each card takes up 25% width of the container with 1rem gap */
     flex-basis: calc(25% - 1rem); /* Equivalent to width to ensure equal distribution */
     margin-bottom: 2rem;
     border-radius: 5px;
@@ -106,6 +105,9 @@ main {
 .country-card h3 {
     padding: 1rem;
     font-size: 1.2rem;
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow: hidden; /* Hide overflow */
+    text-overflow: ellipsis; /* Show ellipsis for overflow text */
 }
 
 .country-card p {
@@ -184,6 +186,7 @@ main {
 @media (max-width: 800px) {
     .country-card {
         width: calc(50% - 1rem); /* Two cards per row */
+        min-width: 250px; /* Ensure cards have a minimum width */
     }
 
     header h1 {
@@ -194,6 +197,7 @@ main {
 @media (max-width: 500px) {
     .country-card {
         width: 100%; /* One card per row */
+        min-width: unset; /* Reset min-width for full width */
     }
 
     header h1 {
